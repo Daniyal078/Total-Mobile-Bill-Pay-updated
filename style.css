@@ -1,0 +1,402 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    min-width: 360px;
+    scroll-behavior: smooth;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.gradient-blue {
+    background-color: #EDEBF9 !important;
+}
+
+.index-1 {
+    z-index: 1;
+}
+
+button:focus:not(:focus-visible) {
+    outline: 0 !important;
+}
+
+.main-light-blue-bgcolor {
+    background-color: #EAF4FE;
+}
+
+.navbar {
+    box-shadow: 0px 0px 10px 0px rgba(128, 128, 128, 0.658);
+}
+
+/* top banner */
+
+.top-banner-main {
+    background-image: url('accets/images/Home-Banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Third-section {
+    background-image: url('accets/images/fastest-mobile-payment-banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carrier-cards {
+    height: 100px;
+    width: 140px;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 0px 0px 9px -4px; */
+    transition: all 0.3s;
+}
+
+/* .carrier-cards:hover {
+        transform: translate(0px, -10px);
+    } */
+
+.carrier-plans-cards {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+    box-shadow: 0px 0px 9px -4px;
+    transition: all 0.3s;
+
+}
+
+.login-bg {
+    background-image: url('/accets/images/login-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-bg-layer {
+    background: #190e81e6;
+}
+
+.register-bg {
+    background-image: url('/accets/images/create-account-bg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.register-bg-layer {
+    background: #190e81e6;
+}
+
+.forget-bg {
+    background-image: url('/accets/images/forget-bg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.forget-bg-layer {
+    background: #190e81e6;
+}
+
+.reset-bg {
+    background-image: url('/accets/images/reset-password-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.reset-bg-layer {
+    background: #190e81e6;
+}
+
+.create-pass-bg {
+    background-image: url('/accets/images/create-new-password.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.create-pass-bg-layer {
+    background: #190e81e6;
+}
+
+.carrier-plans-cards:hover {
+    transform: translate(0px, -10px);
+}
+
+.simple-mob-btn {
+    background-color: #8bc83b;
+}
+
+.simple-mob-btn:hover {
+    background-color: #8bc83bbe;
+}
+
+.lyca-mob-btn {
+    background-color: #06a32b;
+}
+
+.lyca-mob-btn:hover {
+    background-color: #06a32bb0;
+}
+
+.h2o-mob-btn {
+    background-color: #FDE902;
+}
+
+.h2o-mob-btn:hover {
+    background-color: #fde802ad;
+}
+
+.mask {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #00000081;
+    display: none;
+    z-index: 1;
+}
+
+.anim-hov {
+    background-color: #e7f4fe;
+    border-radius: 10px 10px 10px 10px;
+    transition: 0.5s;
+}
+
+.anim-hov:hover {
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0px 0px 15px 0px;
+}
+
+.glow-hov:hover {
+    box-shadow: 0px 0px 20px 0px rgb(185, 232, 253);
+}
+
+.glow-hov {
+    transition: 0.5s;
+}
+
+
+.fs-sm {
+    font-size: small;
+}
+
+#myBtn {
+    display: none;
+}
+
+.text-main {
+    color: #291D89;
+}
+
+.bg-main {
+    background: #291D89;
+}
+
+button:hover {
+    filter: saturate(0.6) !important;
+}
+
+.master-btn {
+    background: #291D89;
+    transition: ease-in-out 0.3s;
+    border: 0;
+    color: #fff !important;
+}
+
+.master-btn:hover {
+    background: #000000;
+}
+
+.collapse:not(.show) {
+    right: -100% !important;
+    transition: all 0.8s;
+}
+
+.navbar-collapse {
+    transition: 0.5s !important;
+}
+
+.hov-master:hover {
+    color: #291D89;
+    /* color: #fff; */
+}
+
+.hover:hover {
+    color: #291D89;
+}
+
+
+/* Firefox */
+.input-box,
+table input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.text-overflow {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    height: 37px;
+    line-height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.stickey-product {
+    position: sticky;
+    top: 25px;
+    bottom: 0;
+    align-self: flex-start;
+}
+
+.cart-sidebar {
+    width: 350px;
+    padding: 10px 12px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: -1000%;
+    height: 100vh;
+    z-index: 4;
+    transition: 0.5s;
+}
+
+.product-quantity {
+    top: -10px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+}
+
+.dropdown-item {
+    transition: 0.5s;
+}
+
+.dropdown-item:hover {
+    color: #fff;
+    border-left: 2px #fff;
+    padding-left: 22px;
+    background: #271d88;
+}
+
+@media only screen and (max-width: 990px) {
+    .navbar-collapse {
+        position: fixed;
+        background: #fff;
+        color: #002926;
+        width: 300px;
+        top: 0;
+        right: 0;
+        padding: 16px 10px;
+        z-index: 2;
+        height: 100vh;
+    }
+
+    nav .collapse:not(.show) {
+        display: block !important;
+    }
+
+    #more {
+        display: none;
+    }
+
+    #myBtn {
+        display: block;
+    }
+
+    .tabs-content .resp-font {
+        font-size: 10px !important;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .w-sm-100 {
+        width: 100% !important;
+    }
+
+    .carrier-plans-cards {
+        padding: 10px 0px;
+    }
+
+    /* 
+    .carrier-cards-col {
+        padding: 5px 5px !important;
+    } */
+
+    #more {
+        display: none;
+    }
+
+    #myBtn {
+        display: block;
+    }
+
+    .navbar-collapse {
+        position: fixed;
+        background: #fff;
+        color: #002926;
+        width: 300px;
+        top: 0;
+        right: 0;
+        padding: 16px 10px;
+        z-index: 2;
+        height: 100vh;
+    }
+
+    nav .collapse:not(.show) {
+        display: block !important;
+    }
+
+    ::placeholder {
+        font-size: small;
+    }
+
+
+    .profile-sidebar {
+        position: fixed;
+        background-color: #fff;
+        top: 0;
+        left: -1000px;
+        height: 100vh;
+        z-index: 4;
+        transition: all 0.5s;
+    }
+
+    .tabs-content .resp-font {
+        font-size: 8px !important;
+    }
+
+    .shop-sidebar-resp {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 260px;
+        height: 100vh;
+        background: #fff;
+        box-shadow: 0px 0px 50px -10px;
+        /* backdrop-filter: blur(20px); */
+        transition: all 0.3s;
+        overflow: scroll;
+        padding-bottom: 100px !important;
+        z-index: 1;
+    }
+
+    .stickey-product {
+        position: relative;
+    }
+}

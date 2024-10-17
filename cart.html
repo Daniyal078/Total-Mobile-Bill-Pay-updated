@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>cart</title>
+</head>
+
+<style>
+    .submenue {
+        right: 227px;
+        display: none;
+    }
+
+    .sub-one:hover .submenue {
+        display: block;
+    }
+
+    .quantity {
+        display: flex;
+        border: 2px solid #b4b4b4;
+        /* border-radius: 4px; */
+        width: fit-content;
+        overflow: hidden;
+
+    }
+
+    .quantity button {
+        background-color: transparent;
+        color: #000;
+        cursor: pointer;
+        font-size: 20px;
+        padding: 0px 3px;
+        /* border-radius: 0px 0px 0px 0px; */
+        border: 1px solid #fff;
+        height: auto;
+        text-align: center;
+        transition: background-color 0.2s;
+    }
+
+    .quantity button:hover {
+        background-color: #d3d3d3;
+    }
+
+    .input-box {
+        width: 30px;
+        text-align: center;
+        background-color: transparent;
+        border: 1px solid #a7a7a7;
+        color: #000000;
+        padding: 5px 5px;
+        font-size: 12px;
+        outline: none;
+    }
+
+    /* Hide the number input spin buttons */
+    .input-box::-webkit-inner-spin-button,
+    .input-box::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    tbody,
+    td,
+    tfoot,
+    th,
+    thead,
+    tr {
+        border-bottom: 1px solid #ffffff42;
+    }
+</style>
+
+<body>
+    <!-- mask -->
+    <div class="mask"></div>
+    <!-- mask end-->
+
+    <!-- main navbar -->
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container">
+            <a class="navbar-brand m-0" href="/Home.html"><img src="accets/images/total-re-up-logo.png" alt=""
+                    width="70%"></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars fs-1" aria-hidden="true"></i>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+                <ul class="navbar-nav py-3 align-items-center">
+                    <li class="nav-item mx-4 text-end d-lg-none d-block">
+                        <i class="fa-solid fa-circle-xmark sideNavClose"></i>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-black fw-semibold" href="Check-Refill-Status.html">Check Refill
+                            Status</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-black fw-semibold" href="/Contact-us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-black fw-semibold" href="Login.html">Log In</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <i class="fa-solid fa-cart-shopping cart-tog cursor"></i>
+                    </li>
+                    <a href="tel:(786) 322-8990">
+                        <button class="btn-outline-primary rounded-3 btn px-3 py-1">(786) 322-8990</button>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- main navbar end -->
+
+
+    <!-- side card -->
+    <div class="cart-sidebar shadow bg-white text-black">
+        <div class="d-flex align-items-center justify-content-between">
+            <div></div>
+            <div class="fw-bold fs-5 text-pink">Shopping Cart</div>
+            <i class="fa-regular my-2 fs-3 fa-circle-xmark sideCartClose cursor"></i>
+        </div>
+
+        <div class="cart-items overflow-auto px-3" style="height: 340px;">
+            <div class="w-auto align-items-center border-bottom py-4">
+                <div class="d-flex align-items-center gap-2">
+                    <div class="position-relative">
+                        <img class="border" src="accets/images/Apple_iPhone_8_Black_600x600.png"
+                            alt="" width="80px">
+                        <div class="bg-black text-white position-absolute rounded-circle product-quantity" style="right: -10px;">99</div>
+                    </div>
+                    <div class="fw-semibold mx-2">
+                        <div>
+                            <div class="text-overflow">Roku Express 4K+ Streaming Player Roku Express 4K+ Streaming
+                                Player</div>
+                        </div>
+                        <div class="d-flex align-items-center my-1">
+                            <div class="d-flex align-items-center mt-2">
+                                <span class="">$300</span> &nbsp;&nbsp;&nbsp;
+                                <input type="number" class="w-50 ps-2" min="0" value="1" name="" id="">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center h-100">
+                        <i class="fa-regular fa-trash-can mb-4"></i>
+                        <div>$600</div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-auto align-items-center border-bottom py-4">
+                <div class="d-flex align-items-center gap-2">
+                    <div class="position-relative">
+                        <img class="border" src="accets/images/Apple_iPhone_8_Black_600x600.png"
+                            alt="" width="80px">
+                        <div class="bg-black text-white position-absolute rounded-circle product-quantity" style="right: -10px;">99</div>
+                    </div>
+                    <div class="fw-semibold mx-2">
+                        <div>
+                            <div class="text-overflow">Roku Express 4K+ Streaming Player Roku Express 4K+ Streaming
+                                Player</div>
+                        </div>
+                        <div class="d-flex align-items-center my-1">
+                            <div class="d-flex align-items-center mt-2">
+                                <span class="">$300</span> &nbsp;&nbsp;&nbsp;
+                                <input type="number" class="w-50 ps-2" min="0" value="1" name="" id="">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center h-100">
+                        <i class="fa-regular fa-trash-can mb-4"></i>
+                        <div>$600</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="d-flex justify-content-between py-3">
+            <div class="fw-bolder text-center fs-5">Subtotal:</div>
+            <div class="fw-semibold fs-5">$5,500.00</div>
+        </div>
+
+        <div class="text-center">
+            <a href="/Cart.html">
+                <button class="btn master-btn text-white rounded-1 fw-bold btn-sm w-100 my-2 py-2 px-3 fs-6">View
+                    cart</button>
+            </a>
+            <a href="/Cart.html">
+                <button
+                    class="btn master-btn text-white rounded-1 fw-bold btn-sm w-100 py-2 px-3 fs-6">Checkout</button>
+            </a>
+        </div>
+    </div>
+    <!-- side card end -->
+
+
+    <!-- Cart -->
+    <section class="bg-smoke">
+        <div class="container py-lg-5 pb-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-12 d-lg-block d-md-block d-none my-lg-0 my-4">
+                    <!-- <div
+                        class="bg-blur-dark  border d-flex align-items-center justify-content-between px-3 py-3 mb-3 rounded-2">
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="fa-solid fa-truck-fast fs-3"></i>
+                            <div class="fw-bold">Thank you for shopping</div>
+                        </div>
+                        <a href="Shop.html"><i class="fa-solid fa-arrow-left"></i> Back to shipping</a>
+                    </div> -->
+                    <div class="bg-blur-dark p-4 border rounded-3">
+                        <table class="table align-middle">
+                            <thead class="bg-darkGreen">
+                                <tr>
+                                    <th class="py-3 text-pink fs-5" scope="col"></th>
+                                    <th class="py-3 text-pink fs-5" scope="col">Products</th>
+                                    <th class="py-3 text-pink fs-5" scope="col"></th>
+                                    <th class="py-3 text-pink fs-5" scope="col">Price</th>
+                                    <th class="py-3 text-pink fs-5" scope="col">Quantity</th>
+                                    <th class="py-3 text-pink fs-5" scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="">
+                                <tr>
+                                    <td><i class="fa-solid fa-trash-can "></i></td>
+                                    <td>
+                                        <div class="position-relative">
+                                            <img class="border" src="accets/images/Apple_iPhone_8_Black_600x600.png"
+                                                alt="" width="75px">
+                                            <div class="bg-black text-white position-absolute rounded-circle end-0 product-quantity">99</div>
+                                        </div>
+                                    <td clasFs="">
+                                        <div class="fw-semibold  text-overflow">Apple IPhone 14 Pro Max Black
+                                            (Unlocked).Apple IPhone 14 Pro Max Black (Unlocked). Lorem ipsum dolor sit
+                                            amet consectetur adipisicing elit. Tenetur eligendi excepturi aspernatur
+                                            fugiat, nam dolorem soluta, est incidunt saepe iure natus fuga eaque. Eos
+                                            dolores, vero optio eligendi quae dignissimos.
+                                        </div>
+                                        <div class="fw-semibold ">$99.00</div>
+                                    </td>
+                                    <td class="">$999</td>
+                                    <td>
+                                        <div class="quantity">
+                                            <button class="minus" aria-label="Decrease">&minus;</button>
+                                            <input type="number" class="input-box" value="1" min="1" max="10">
+                                            <button class="plus" aria-label="Increase">&plus;</button>
+                                        </div>
+                                    </td>
+                                    <td class="">$1999</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-trash-can "></i></td>
+                                    <td>
+                                        <div class="position-relative">
+                                            <img class="border" src="accets/images/Apple_iPhone_8_Black_600x600.png"
+                                                alt="" width="75px">
+                                            <div class="bg-black text-white position-absolute rounded-circle end-0 product-quantity">99</div>
+                                        </div>
+                                    <td clasFs="">
+                                        <div class="fw-semibold  text-overflow">Apple IPhone 14 Pro Max Black
+                                            (Unlocked).Apple IPhone 14 Pro Max Black (Unlocked). Lorem ipsum dolor sit
+                                            amet consectetur adipisicing elit. Tenetur eligendi excepturi aspernatur
+                                            fugiat, nam dolorem soluta, est incidunt saepe iure natus fuga eaque. Eos
+                                            dolores, vero optio eligendi quae dignissimos.
+                                        </div>
+                                        <div class="fw-semibold ">$99.00</div>
+                                    </td>
+                                    <td class="">$999</td>
+                                    <td>
+                                        <div class="quantity">
+                                            <button class="minus" aria-label="Decrease">&minus;</button>
+                                            <input type="number" class="input-box" value="1" min="1" max="10">
+                                            <button class="plus" aria-label="Increase">&plus;</button>
+                                        </div>
+                                    </td>
+                                    <td class="">$1999</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-trash-can "></i></td>
+                                    <td>
+                                        <div class="position-relative">
+                                            <img class="border" src="accets/images/Apple_iPhone_8_Black_600x600.png"
+                                                alt="" width="75px">
+                                            <div class="bg-black text-white position-absolute rounded-circle end-0 product-quantity">99</div>
+                                        </div>
+                                    <td clasFs="">
+                                        <div class="fw-semibold  text-overflow">Apple IPhone 14 Pro Max Black
+                                            (Unlocked).Apple IPhone 14 Pro Max Black (Unlocked). Lorem ipsum dolor sit
+                                            amet consectetur adipisicing elit. Tenetur eligendi excepturi aspernatur
+                                            fugiat, nam dolorem soluta, est incidunt saepe iure natus fuga eaque. Eos
+                                            dolores, vero optio eligendi quae dignissimos.
+                                        </div>
+                                        <div class="fw-semibold ">$99.00</div>
+                                    </td>
+                                    <td class="">$999</td>
+                                    <td>
+                                        <div class="quantity">
+                                            <button class="minus" aria-label="Decrease">&minus;</button>
+                                            <input type="number" class="input-box" value="1" min="1" max="10">
+                                            <button class="plus" aria-label="Increase">&plus;</button>
+                                        </div>
+                                    </td>
+                                    <td class="">$1999</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!--mobile cart  -->
+                <div class="d-lg-none d-md-none overflow-auto bg-blur-dark col-11 border rounded-2 py-3 mb-3">
+                    <a href="Shop.html"></a>
+                    <div class="d-flex align-items-center justify-content-between py-2">
+                        <div class="fs-4 fw-bold text-pink border-2 py-1">Products</div>
+                        <div class="text-pink fs-4 fw-bold">Subtotal</div>
+                    </div>
+
+                    <div class="overflow-auto" style="height: 300px;">
+                        <div class="w-auto align-items-center border-bottom py-4 pe-2">
+                            <div class="d-flex align-items-center gap-2 ">
+                                <div class="position-relative">
+                                    <img class="border" src="accets/images/Apple_iPhone_8_Black_600x600.png"
+                                        alt="" width="60px">
+                                    <div class="bg-black text-white position-absolute rounded-circle product-quantity" style="right: -10px;">99</div>
+                                </div>
+                                <div class="fw-semibold mx-2">
+                                    <div>
+                                        <div class="text-overflow">Roku Express 4K+ Streaming Player Roku Express 4K+
+                                            Streaming
+                                            Player</div>
+                                    </div>
+                                    <div class="d-flex align-items-center my-1">
+                                        <div class="d-flex align-items-center mt-2">
+                                            <span class="">$300</span> &nbsp;&nbsp;&nbsp;
+                                            <input type="number" class="w-50 ps-2" min="0" value="1" name="" id="">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center h-100">
+                                    <i class="fa-regular fa-trash-can mb-4"></i>
+                                    <div>$600</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-auto align-items-center border-bottom py-4 pe-2">
+                            <div class="d-flex align-items-center gap-2 ">
+                                <div class="position-relative">
+                                    <img class="border" src="accets/images/Apple_iPhone_8_Black_600x600.png"
+                                        alt="" width="60px">
+                                    <div class="bg-black text-white position-absolute rounded-circle product-quantity" style="right: -10px;">99</div>
+                                </div>
+                                <div class="fw-semibold mx-2">
+                                    <div>
+                                        <div class="text-overflow">Roku Express 4K+ Streaming Player Roku Express 4K+
+                                            Streaming
+                                            Player</div>
+                                    </div>
+                                    <div class="d-flex align-items-center my-1">
+                                        <div class="d-flex align-items-center mt-2">
+                                            <span class="">$300</span> &nbsp;&nbsp;&nbsp;
+                                            <input type="number" class="w-50 ps-2" min="0" value="1" name="" id="">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center h-100">
+                                    <i class="fa-regular fa-trash-can mb-4"></i>
+                                    <div>$600</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-auto align-items-center border-bottom py-4 pe-2">
+                            <div class="d-flex align-items-center gap-2 ">
+                                <div class="position-relative">
+                                    <img class="border" src="accets/images/Apple_iPhone_8_Black_600x600.png"
+                                        alt="" width="60px">
+                                    <div class="bg-black text-white position-absolute rounded-circle product-quantity" style="right: -10px;">99</div>
+                                </div>
+                                <div class="fw-semibold mx-2">
+                                    <div>
+                                        <div class="text-overflow">Roku Express 4K+ Streaming Player Roku Express 4K+
+                                            Streaming
+                                            Player</div>
+                                    </div>
+                                    <div class="d-flex align-items-center my-1">
+                                        <div class="d-flex align-items-center mt-2">
+                                            <span class="">$300</span> &nbsp;&nbsp;&nbsp;
+                                            <input type="number" class="w-50 ps-2" min="0" value="1" name="" id="">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center h-100">
+                                    <i class="fa-regular fa-trash-can mb-4"></i>
+                                    <div>$600</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-auto align-items-center border-bottom py-4 pe-2">
+                            <div class="d-flex align-items-center gap-2 ">
+                                <div class="position-relative">
+                                    <img class="border" src="accets/images/Apple_iPhone_8_Black_600x600.png"
+                                        alt="" width="60px">
+                                    <div class="bg-black text-white position-absolute rounded-circle product-quantity" style="right: -10px;">99</div>
+                                </div>
+                                <div class="fw-semibold mx-2">
+                                    <div>
+                                        <div class="text-overflow">Roku Express 4K+ Streaming Player Roku Express 4K+
+                                            Streaming
+                                            Player</div>
+                                    </div>
+                                    <div class="d-flex align-items-center my-1">
+                                        <div class="d-flex align-items-center mt-2">
+                                            <span class="">$300</span> &nbsp;&nbsp;&nbsp;
+                                            <input type="number" class="w-50 ps-2" min="0" value="1" name="" id="">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center h-100">
+                                    <i class="fa-regular fa-trash-can mb-4"></i>
+                                    <div>$600</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--mobile cart end  -->
+
+                <div class="col-lg-4 col-md-12 h-100 col-11 d-flex bg-white rounded-2 h-100">
+                    <div class="w-100 mb-0 rounded-3 border p-2 py-4">
+                        <div class="fs-4 fw-bold px-2 text-pink text-center">Cart total</div>
+                        <div class="d-flex justify-content-between border-bottom py-3 px-2">
+                            <div class="fw-bold fs-5">Subtotal</div>
+                            <div class="fw-semibold">$700.00</div>
+                        </div>
+                        <div class="d-flex justify-content-between border-bottom py-3 px-2">
+                            <div class="fw-bold fs-5">Shipping Charges</div>
+                            <div class="fw-semibold">$300</div>
+                        </div>
+                        <div class="d-flex justify-content-between border-bottom py-3 px-2">
+                            <div class="fw-bold fs-5">Total</div>
+                            <div class="fw-bold">$850</div>
+                        </div>
+                        <a href="checkout-for-product.html"
+                            class="btn master-btn py-2 fw-semibold w-100 mb-2">Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart end -->
+
+
+    <!-- footer -->
+    <footer class="bg-light text-start text-lg-start pt-4 mb-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold">Resources</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="my-3 fw-semibold">
+                            <a href="Check-Refill-Status.html" class="text-body">Check Your Refill Status</a>
+                        </li>
+                        <li class="my-3 fw-semibold">
+                            <a href="Contact-us.html" class="text-body">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold">Legal</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="my-3 fw-semibold">
+                            <a href="privacy.html" class="text-body">Privacy Policy</a>
+                        </li>
+                        <li class="my-3 fw-semibold">
+                            <a href="Terms-of-Service.html" class="text-body">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <ul class="list-unstyled mb-0">
+                        <li class="my-3 fw-semibold">
+                            <a href="DMCA.html" class="text-body">DMCA Compliance</a>
+                        </li>
+                        <li class="my-3 fw-semibold">
+                            <a href="Cancellation&Refund-Policy.html" class="text-body">Cancellation & Refund Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2020 Copyright:
+            <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <script src="script.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+
+
+
+        (function () {
+            document.querySelectorAll(".quantity").forEach(function (quantityContainer) {
+                const minusBtn = quantityContainer.querySelector(".minus");
+                const plusBtn = quantityContainer.querySelector(".plus");
+                const inputBox = quantityContainer.querySelector(".input-box");
+
+                updateButtonStates();
+
+                quantityContainer.addEventListener("click", handleButtonClick);
+                inputBox.addEventListener("input", handleQuantityChange);
+
+                function updateButtonStates() {
+                    const value = parseInt(inputBox.value);
+                    minusBtn.disabled = value <= 1;
+                    plusBtn.disabled = value >= parseInt(inputBox.max);
+                }
+
+                function handleButtonClick(event) {
+                    if (event.target.classList.contains("minus")) {
+                        decreaseValue();
+                    } else if (event.target.classList.contains("plus")) {
+                        increaseValue();
+                    }
+                }
+
+                function decreaseValue() {
+                    let value = parseInt(inputBox.value);
+                    value = isNaN(value) ? 1 : Math.max(value - 1, 1);
+                    inputBox.value = value;
+                    updateButtonStates();
+                    handleQuantityChange();
+                }
+
+                function increaseValue() {
+                    let value = parseInt(inputBox.value);
+                    value = isNaN(value) ? 1 : Math.min(value + 1, parseInt(inputBox.max));
+                    inputBox.value = value;
+                    updateButtonStates();
+                    handleQuantityChange();
+                }
+
+                function handleQuantityChange() {
+                    let value = parseInt(inputBox.value);
+                    value = isNaN(value) ? 1 : value;
+
+                    console.log("Quantity changed:", value);
+                }
+            });
+        })();
+
+
+
+        tog = 0;
+        document.querySelector('.text-overflow').addEventListener('click', function () {
+
+            if (tog == 0) {
+                document.querySelector('.text-overflow').style.display = "block"
+                document.querySelector('.text-overflow').style.height = "auto"
+                tog = 1;
+            }
+            else {
+                document.querySelector('.text-overflow').style.display = "-webkit-box"
+                // document.querySelector('.text-overflow').style.height = "auto"
+                tog = 0;
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>

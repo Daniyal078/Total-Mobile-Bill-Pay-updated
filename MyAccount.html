@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>MyAccount</title>
+</head>
+
+<style>
+    @media all {
+        .tabs {
+            padding-top: 7%
+        }
+
+        .tab-list {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .tab-list>li {
+            padding: 0 3%;
+            /* text-align: center; */
+            float: left;
+            cursor: pointer;
+        }
+
+        .tab-list>li:first-child {
+            border-left: none;
+        }
+
+        .tab-list>li:hover>h3,
+        .tab-list>li.active>h3 {
+            color: #4ECDC4;
+        }
+
+        .tab-list>li>h3 {
+            font-weight: 100;
+            display: block;
+            transition: all 500ms ease;
+        }
+
+        .tabs-content {
+            opacity: 0;
+            display: none;
+            margin: 3em 0;
+        }
+
+        .tabs-content.active {
+            opacity: 1;
+            display: block;
+        }
+
+        /* Tab 1 Set */
+        .tabs-content#content-select-1>div {
+            padding: 0 4em;
+        }
+
+        .tabs-content>div>i {
+            font-size: 65px;
+            float: left;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .tabs-content>div>article {
+            float: right;
+            width: 80%;
+        }
+
+        .tabs-content>div>article h3 {
+            font-weight: bold;
+        }
+
+        /* Bar Set Style */
+        .tab-header {
+            margin: 0 0 1em;
+        }
+
+        .tab-header h3 {
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
+        .single-bar {
+            float: left;
+            text-align: center;
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .single-bar p {
+            text-align: center;
+        }
+
+        .single-bar p.bar-place {
+            margin: 1em 0;
+        }
+
+        .bar-container {
+            border-bottom: 1px solid #fff;
+            padding: 0 1em;
+            min-height: 280px;
+            position: relative;
+        }
+
+        .bar {
+            position: absolute;
+            overflow: hidden;
+            bottom: 0;
+        }
+
+        .bar:first-child {
+            padding-left: 0;
+        }
+
+        .bar-value {
+            border: 1px solid #fff;
+            border-bottom: none;
+        }
+
+        .bar1 {
+            height: 150px;
+        }
+
+        .bar2 {
+            height: 245px;
+        }
+
+        .bar3 {
+            height: 110px;
+        }
+
+        .bar4 {
+            height: 95px;
+        }
+
+        .bar5 {
+            height: 180px;
+        }
+
+        .bar6 {
+            height: 50px;
+        }
+
+        .bar-highlight {
+            background-color: #4ECDC4;
+            border-color: #4ECDC4;
+        }
+
+        .bar-highlight:hover {
+            opacity: .9;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .accordion-button:not(.collapsed),
+        .accordion-item button:focus:not(:focus-visible) {
+            color: #000000 !important;
+            background-color: #ffffff !important;
+            border: 0 !important;
+            box-shadow: none !important;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+
+        .gradient-blue {
+            background-color: #EDEBF9 !important;
+        }
+    }
+
+    .button {
+        display: inline-block;
+        margin: 4px 2px;
+        background-color: #ffffff;
+        font-size: 25px;
+        padding-left: 32px;
+        padding-right: 32px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        cursor: pointer;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .button:hover {
+        transition-duration: 0.4s;
+        -moz-transition-duration: 0.4s;
+        -webkit-transition-duration: 0.4s;
+        -o-transition-duration: 0.4s;
+        background-color: white;
+        color: black;
+    }
+
+    .search-container {
+        position: relative;
+        display: inline-block;
+        margin: 4px 2px;
+        height: 50px;
+        width: 50px;
+        vertical-align: bottom;
+    }
+
+    .mglass {
+        display: inline-block;
+        pointer-events: none;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+    }
+
+    .searchbutton {
+        /* position: absolute; */
+        font-size: 22px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .search:focus+.searchbutton {
+        transition-duration: 0.4s;
+        -moz-transition-duration: 0.4s;
+        -webkit-transition-duration: 0.4s;
+        -o-transition-duration: 0.4s;
+        background-color: white;
+        color: black;
+    }
+
+    .search {
+        position: absolute;
+        left: 49px;
+        /* Button width-1px (Not 50px/100% because that will sometimes show a 1px line between the search box and button) */
+        background-color: rgb(255, 255, 255);
+        outline: none;
+        color: #000000;
+        border: none;
+        padding: 0;
+        width: 0;
+        height: 100%;
+        z-index: 10;
+        transition-duration: 0.4s;
+        -moz-transition-duration: 0.4s;
+        -webkit-transition-duration: 0.4s;
+        -o-transition-duration: 0.4s;
+    }
+
+    .search:focus {
+        width: 363px;
+        /* Bar width+1px */
+        padding: 0 16px 0 0;
+    }
+
+    .expandright {
+        left: auto;
+        right: 0px;
+        /* Button width-1px */
+    }
+
+    .expandright:focus {
+        padding: 0 0 0 16px;
+    }
+
+    /* .accordion-button:not(.collapsed),
+    .accordion-item button:focus:not(:focus-visible) {
+        color: #000000 !important;
+        background-color: #003532 !important;
+        border: 0 !important;
+    }
+
+    .accordion-button::after {
+        background-image: url('accets/Images/white-down-arrow-png-2.png');
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url('accets/Images/white-down-arrow-png-2.png');
+    }
+
+    .accordion-button:not(.collapsed),
+    .accordion-item button:focus:not(:focus-visible) {
+        box-shadow: 0px 0px 0px 0px !important;
+
+    } */
+</style>
+
+
+<body>
+    <!-- mask -->
+    <div class="mask"></div>
+    <!-- mask end-->
+    <!-- main navbar -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container">
+            <a class="navbar-brand m-0" href="/Home.html"><img src="accets/images/total-re-up-logo.png" alt=""
+                    width="70%"></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars fs-1" aria-hidden="true"></i>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+                <ul class="navbar-nav py-3">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-black fw-semibold" href="Check-Refill-Status.html">Check Refill
+                            Status</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-black fw-semibold" href="/Contact-us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-black fw-semibold" href="Login.html">Log In</a>
+                    </li>
+                    <div class="border rounded-pill text-primary px-3 py-1 border-2 border-primary">(786) 322-8990</div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- main navbar end -->
+
+    <div class="container-fluid">
+        <div class="bg-dark d-lx-none d-lg-none d-md-none text-white px-3 py-2 rounded mt-3">
+            <i class="fa fa-bars profile-side-tog" aria-hidden="true"></i>
+        </div>
+        <div class="row flex-sm-nowrap justify-content-center justify-content-sm-between">
+            <div class="col-lg-3 col-md-4 col-8 profile-sidebar">
+                <div class="">
+                    <!-- Tabs Start -->
+                    <div class="container tabs rounded-3">
+                        <div class="d-flex justify-content-end">
+                            <i
+                                class="fa-regular fa-circle-xmark d-lx-none d-lg-none d-md-none fs-4 profile-side-close"></i>
+                        </div>
+                        <ul class="tab-list d-grid">
+                            <li id="select-15" class="text-black pointer fs-6 py-1 my-1 fw-semibold">
+                                <i class="fa-regular fa-address-card me-2 text-main"></i>Profile
+                            </li>
+                            <li id="select-1" class="text-black pointer fs-6 py-1 my-1 fw-semibold">
+                                <i class="fa-regular fa-credit-card me-2 text-main"></i>Payment History
+                            </li>
+                            <li id="select-8" class="fs-6 text-black fw-semibold py-1 my-1">
+                                <i class="fa-regular fa-money-bill-1 me-2 text-main"></i>Manage Payment Method
+                            </li>
+                            <li class="fs-6 text-black fw-semibold py-1 my-1">
+                                <i class="fa-solid fa-arrow-right-from-bracket me-2 text-main"></i>Logout
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Tabs End -->
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-8 col-12 rounded-3">
+                <!--Combined Tabbed Content from previous pens-->
+                <section class="">
+                    <div class="row">
+                        <!-- Tabs Content Start -->
+                        <div class="tabs-content my-0 gradient-blue py-3 px-4" id="content-select-1">
+                            <div
+                                class="text-center d-flex justify-content-between overflow-hidden align-items-center fs-6 px-3 resp-small-font mb-3 text-main py-2 rounded-2 fw-bold bg-white">
+                                <div class="resp-small-font col-lg-auto col-5">Payment History</div>
+                                <div class="d-flex align-items-center rounded-2">
+                                    <!-- <div class="search-container">
+                                        <form action="#" method="get">
+                                            <input class="search expandright" id="searchright" type="search" name="q"
+                                                placeholder="Search">
+                                            <label class="button searchbutton" for="searchright"><span
+                                                    class="mglass">&#9906;</span></label>
+                                        </form>
+                                    </div> -->
+                                    <form action="#"></form>
+                                    <input class="form-control rounded-0 border fs-6 py-1 bg-transparent" type="text"
+                                        placeholder="search payments">
+                                    </form>
+
+                                </div>
+                            </div>
+
+                            <table class="w-100 bg-white">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center pb-3 px-2 py-2 resp-font">Name</th>
+                                        <th class="text-center pb-3 px-2 py-2 resp-font">Transaction ID</th>
+                                        <th class="text-center pb-3 px-2 py-2 resp-font">Date</th>
+                                        <th class="text-center pb-3 px-2 py-2 resp-font">Phone</th>
+                                        <th class="text-center pb-3 px-2 py-2 resp-font">Amount</th>
+                                        <th class="text-center pb-3 px-2 py-2 resp-font">View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center m-2 py-2 resp-font">
+                                            <div>John Doe</div>
+                                        </td>
+                                        <td class="text-center m-2 py-2 resp-font">
+                                            <div>2341451</div>
+                                        </td>
+                                        <td class="text-center m-2 py-2 resp-font">9/7/2024</td>
+                                        <td class="text-center m-2 py-2 resp-font">
+                                            <div>00993423</div>
+                                        </td>
+                                        <td class="text-center m-2 py-2 resp-font">
+                                            <div>$47</div>
+                                        </td>
+                                        <td class="text-center m-2 py-2 resp-font">
+                                            <div><i class="fa-solid fa-eye"></i></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center m-2 py-2 resp-font">
+                                            <div>John Doe</div>
+                                        </td>
+                                        <td class="text-center m-2 py-2 resp-font">
+                                            <div>2341451</div>
+                                        </td>
+                                        <td class="text-center m-2 py-2 resp-font">9/7/2024</td>
+                                        <td class="text-center m-2 py-2 resp-font">
+                                            <div>00993423</div>
+                                        </td>
+                                        <td class="text-center m-2 py-2 resp-font">
+                                            <div>$47</div>
+                                        </td>
+                                        <td class="text-center m-2 py-2 resp-font">
+                                            <div><i class="fa-solid fa-eye"></i></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center m-2 py-2 resp-font">
+                                            <div>John Doe</div>
+                                        </td>
+                                        <td class="text-center m-2 py-2 resp-font">
+                                            <div>2341451</div>
+                                        </td>
+                                        <td class="text-center m-2 py-2 resp-font">9/7/2024</td>
+                                        <td class="text-center m-2 py-2 resp-font">
+                                            <div>00993423</div>
+                                        </td>
+                                        <td class="text-center m-2 py-2 resp-font">
+                                            <div>$47</div>
+                                        </td>
+                                        <td class="text-center m-2 py-2 resp-font">
+                                            <div><i class="fa-solid fa-eye"></i></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="p-0">
+                                <canvas id="myChartThree" style="width:100%;"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="tabs-content my-0 bar-chart" id="content-select-2">
+                            <form action="#">
+                                <div class="d-flex align-items-center gap-2 border px-3">
+                                    <i class="fa fa-search fs-5" aria-hidden="true"></i>
+                                    <input class="border-0 form-control" type="search" name="" id=""
+                                        placeholder="search for your bank">
+                                </div>
+                            </form>
+                            <div class="d-flex gap-2 my-2">
+                                <img class="border p-2"
+                                    src="accets/Images/BankOfAmericaFullLogo-0227e27e7950a1c8bb2e6b77a328cc12.svg"
+                                    width="49%" alt="">
+                                <img class="border p-2"
+                                    src="accets/Images/PNCFullLogo-5981b151acd3f0ae69f155c642a67b8a (1).svg" width="49%"
+                                    alt="">
+                            </div>
+                            <div class="d-flex gap-2 my-2">
+                                <img class="border p-2"
+                                    src="accets/Images/WellsFargoFullLogo-6b2691910378d49bfe50d92e00bf1a81.svg"
+                                    width="49%" alt="">
+                                <img class="border p-2"
+                                    src="accets/Images/ChaseFullLogo-11c3f54bb01215e0779a25104f19962b.svg" width="49%"
+                                    alt="">
+                            </div>
+                            <div class="d-flex gap-2 my-2">
+                                <img class="border p-2"
+                                    src="accets/Images/USAAFullLogo-7c2d4f715c47ae65934f834c5c0ee55a.svg" width="49%"
+                                    alt="">
+                                <img class="border p-2"
+                                    src="accets/Images/NavyFederalCreditUnionFullLogo-d9d395bfb188a613672ab09b380b14db.svg"
+                                    width="49%" alt="">
+                            </div>
+                            <p><span class="text-primary"> Enter bank details manually instead</span>(takes
+                                1-2
+                                business days)</p>
+                            <p>By clicking Bank Payment, you authorize Xoomtel to debit the bank account you
+                                select for any amount owed for charges arising from your use of Xoomtel
+                                services
+                                and/or purchase of products from Xoomtel, pursuant to Xoomtel website and
+                                terms,
+                                until this authorization is revoked. You may amend or cancel this
+                                authorization
+                                at any time by providing notice to Xoomtel with 30 (thirty) days notice.</p>
+                            <input type="checkbox" name="" id="">
+                            <label for="">Save payment method</label>
+                        </div>
+                        <div class="tabs-content my-0" id="content-select-3">
+                            3
+                        </div>
+                        <div class="tabs-content my-0" id="content-select-4">
+                            4
+                        </div>
+                        <div class="tabs-content my-0" id="content-select-5">
+                            <div class="text-center d-flex justify-content-between align-items-center fs-6 px-3 
+                                resp-small-font mb-3 text-white py-2 rounded-2 fw-bold bg-dark">
+                                <div>INVOICE</div>
+                                <div class="d-flex align-items-center bg-white rounded-2 col-xl-3 col-md-4 col-7">
+                                    <form action="#">
+                                        <input class="form-control rounded-0 border-0 fs-6 py-1 bg-transparent"
+                                            type="text" placeholder="Search invoices">
+                                    </form>
+                                    <!-- <i class="fa-solid fs-5 mx-1 text-black fa-magnifying-glass"></i> -->
+                                </div>
+                            </div>
+                            <table class="w-100">
+                                <thead>
+                                    <tr>
+                                        <th class=" pb-3 resp-font">Invoice No</th>
+                                        <th class=" pb-3 resp-font">Date/Time</th>
+                                        <th class=" pb-3  resp-font">Status</th>
+                                        <th class=" pb-3 text-center resp-font">Qty</th>
+                                        <th class=" pb-3 text-center resp-font">Amount</th>
+                                        <th class=" pb-3 text-center resp-font">Added By</th>
+                                        <th class=" pb-3 text-center resp-font">Download</th>
+                                        <th class=" pb-3 text-center resp-font">Type</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="border-top border-bottom">
+                                    <tr>
+                                        <td class=" m-2 resp-font">
+                                            3DFF2C98-DRAFT
+                                        </td>
+                                        <td class=" m-2 resp-font">
+                                            8/22/2024 / 5:35AM
+                                        </td>
+                                        <td class="text-warning m-2 resp-font">
+                                            Pending
+                                        </td>
+                                        <td class="m-2 resp-font text-center py-2"><span class="mx-2"></span>
+                                            3
+                                        </td>
+                                        <td class="m-2 resp-font text-center py-2"><span class="mx-2">$36.87 USD</span>
+                                        </td>
+                                        <td class=" m-2 resp-font text-center">
+                                            Ashir Ali
+                                        </td>
+                                        <td class=" m-2 resp-font text-center">
+                                            <i class="fa-solid fa-download"></i>
+                                        </td>
+                                        <td class=" m-2 resp-font text-center">
+                                            Wallet
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tabs-content my-0" id="content-select-6">
+                            <div class="text-center d-flex justify-content-between align-items-center fs-6 px-3 
+                                resp-small-font mb-3 text-white py-2 rounded-2 fw-bold bg-dark">
+                                <div>PAYMENTS</div>
+                                <div class="d-flex align-items-center bg-white col-lg-3 col-md-4 col-7 rounded-2">
+                                    <form action="#">
+                                        <input class="form-control rounded-0 border-0 fs-6 py-1 bg-transparent"
+                                            type="text" placeholder="search payments">
+                                    </form>
+                                    <!-- <i class="fa-solid mx-1 text-black fs-5 fa-magnifying-glass"></i> -->
+                                </div>
+                            </div>
+                            <table class="w-100">
+                                <thead>
+                                    <tr>
+                                        <th class="pb-3 resp-font">Order ID</th>
+                                        <th class="pb-3 resp-font">Date/time</th>
+                                        <th class="pb-3 resp-font">Time</th>
+                                        <th class="pb-3 resp-font">Status</th>
+                                        <th class="pb-3 resp-font">Amount</th>
+                                        <th class="pb-3 resp-font text-center">Method</th>
+                                        <th class="pb-3 resp-font text-center">Download</th>
+                                        <th class="pb-3 resp-font text-center">Type</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="border-top border-bottom">
+                                    <tr>
+                                        <td class=" m-2 resp-font py-2">27.042020,18:32</td>
+                                        <td class=" m-2 resp-font py-2">8/22/2024/6:40 AM</td>
+                                        <td class=" m-2 resp-font py-2">6:46 AM</td>
+                                        <td class=" m-2 resp-font py-2 text-warning">Pending</td>
+                                        <td class=" m-2 resp-font py-2">45346546</td>
+                                        <td class=" m-2 resp-font py-2 text-center">VISA</td>
+                                        <td class=" m-2 resp-font py-2 text-center">
+                                            <i class="fa-solid fa-download"></i>
+                                        </td>
+                                        <td class=" m-2 resp-font py-2 text-center">
+                                            Wallet
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tabs-content my-0" id="content-select-7">
+                            <div class="text-center fs-4 mb-3 text-white py-2 rounded-2 fw-bold bg-dark">AGING REPORTS
+                            </div>
+
+                            <div class="fw-semibold fs-5 my-2">Invoices and Collections by Month</div>
+                            <canvas id="myChart" style="width:100%;"></canvas>
+
+                            <div class="row my-5">
+                                <div class="col my-3">
+                                    <div class="fw-semibold fs- my-3">Top Over Dues Customers</div>
+                                    <table class="w-100">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center pb-3 px-2 resp-font">Customer</th>
+                                                <th class="text-center pb-3 px-2 resp-font">Overdue</th>
+                                                <th class="text-center pb-3 px-2 resp-font">1-30</th>
+                                                <th class="text-center pb-3 px-2 resp-font">31-60</th>
+                                                <th class="text-center pb-3 px-2 resp-font">61-90</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="border-top border-bottom">
+                                            <tr>
+                                                <td class="text-center m-2 text-decoration-underline py-2 resp-font">
+                                                    Donaher</td>
+                                                <td class="text-center m-2 text-decoration-underline py-2 resp-font">
+                                                    $4564</td>
+                                                <td class="text-center m-2 text-decoration-underline py-2 resp-font">
+                                                    $4234</td>
+                                                <td class="text-center m-2 text-decoration-underline py-2 resp-font">
+                                                    $4564332</td>
+                                                <td class="text-center m-2 text-decoration-underline py-2 resp-font">
+                                                    $500</td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody class="border-top border-bottom">
+                                            <tr>
+                                                <td class="text-center m-2 text-decoration-underline py-2 resp-font">
+                                                    Donaher</td>
+                                                <td class="text-center m-2 text-decoration-underline py-2 resp-font">
+                                                    $4564</td>
+                                                <td class="text-center m-2 text-decoration-underline py-2 resp-font">
+                                                    $4234</td>
+                                                <td class="text-center m-2 text-decoration-underline py-2 resp-font">
+                                                    $4564332</td>
+                                                <td class="text-center m-2 text-decoration-underline py-2 resp-font">
+                                                    $500</td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody class="border-top border-bottom">
+                                            <tr>
+                                                <td class="text-center m-2 text-decoration-underline py-2 resp-font">
+                                                    Donaher</td>
+                                                <td class="text-center m-2 text-decoration-underline py-2 resp-font">
+                                                    $4564</td>
+                                                <td class="text-center m-2 text-decoration-underline py-2 resp-font">
+                                                    $4234</td>
+                                                <td class="text-center m-2 text-decoration-underline py-2 resp-font">
+                                                    $4564332</td>
+                                                <td class="text-center m-2 text-decoration-underline py-2 resp-font">
+                                                    $500</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col my-3 border rounded-2">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="fw-semibold fs- my-1">Net Outstanding</div>
+                                        <div class="text-decoration-underline">$232,000</div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="fw-semibold fs- my-1">Total Outstanding</div>
+                                        <div class="text-decoration-underline">$232,000</div>
+                                    </div>
+                                    <canvas id="myChartTwo" style="width:100%;max-width:600px"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs-content my-0" id="content-select-8">
+                            <div class="gradient-blue p-4">
+                                <div
+                                    class="text-center fs-6 px-3 resp-small-font mb-3 text-main py-3 rounded-2 fw-bold bg-white">
+                                    <div> Manage Payment Method</div>
+                                </div>
+
+                                <div class="">
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseOne" aria-expanded="true"
+                                                    aria-controls="collapseOne">
+                                                    <img class="border p-1 me-2" src="accets/images/Visa_Logo.png"
+                                                        width="50px" alt=""> Visa ending in 1112
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                                aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="container">
+                                                        <div class="row justify-content-between gap-lg-0 gap-3">
+                                                            <div class="col-lg-3">
+                                                                <div>
+                                                                    <div class="fw-bold">Name on card</div>
+                                                                    <div class="fw-normal">Lorem, ipsum.</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <div class="gap-3">
+                                                                    <button class="rounded-3 btn btn-outline-primary"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#exampleModal">Add</button>
+                                                                    <button class="rounded-3 btn btn-outline-primary"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#Remove">Remove</button>
+                                                                    <button class="rounded-3 btn btn-outline-primary"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#exampleModal">Edit</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="modal fade" id="Remove" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Remove Payment
+                                                        Information
+                                                    </h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="p-2 bg-white">
+                                                        If you do not want this payment method to be displayed in your
+                                                        list of
+                                                        payment options, click "Confirm". (Disabling this
+                                                        payment method will neither cancel any of your open order nor
+                                                        fail any
+                                                        automatic payments set. up that use this method.)
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-dark"
+                                                        data-bs-dismiss="modal">cancel</button>
+                                                    <button type="button" class="btn btn-dark"
+                                                        data-bs-dismiss="modal">Confirm
+                                                        Remove</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Enter card
+                                                        details</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="p-2 bg-white">
+                                                        <form action="#">
+                                                            <label class="fw-semibold mb-1" for="">Card number</label>
+                                                            <input type="text" class="form-control">
+                                                            <label class="fw-semibold mt-2 mb-1" for="">Nickname</label>
+                                                            <input type="text" class="form-control">
+                                                            <label class="fw-semibold mt-2 mb-1" for="">Expiry
+                                                                date</label>
+                                                            <input type="date" name="" id="" class="form-control">
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-dark"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="master-btn p-2 rounded-3">Enter card
+                                                        details</button>
+                                                </div>
+
+                                                <div class="p-3">
+                                                    <div> please ensure that you enable your card for online payments
+                                                        from
+                                                        your bank's app</div>
+                                                    <div class="d-flex my-3">
+                                                        <div><img class="border p-1 me-2"
+                                                                src="accets/images/Visa_Logo.png" width="50px" alt="">
+                                                        </div>
+                                                        <div><img class="border p-1 me-2"
+                                                                src="accets/images/Visa_Logo.png" width="50px" alt="">
+                                                        </div>
+                                                        <div><img class="border p-1 me-2"
+                                                                src="accets/images/Visa_Logo.png" width="50px" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs-content my-0" id="content-select-9">
+                            <div class="text-center fs-4 mb-3 text-white py-2 rounded-2 fw-bold bg-dark">OPEN ORDERS
+                            </div>
+                        </div>
+                        <div class="tabs-content my-0" id="content-select-10">
+                            <div
+                                class="text-center d-flex justify-content-between px-3 fs-4 mb-3 text-white py-2 rounded-2 fw-bold bg-dark">
+                                <div>SEARCH ORDERS</div>
+                                <div class="d-flex align-items-center bg-white">
+                                    <form action="#">
+                                        <input class="form-control py-1 rounded-0 border-0 bg-transparent" type="text"
+                                            placeholder="Search Orders">
+                                    </form>
+                                    <i class="fa-solid fs-4 mx-1 text-black fa-magnifying-glass"></i>
+                                </div>
+                            </div>
+                            <table class="w-100">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center pb-3 px-2 resp-font">Order</th>
+                                        <th class="text-center pb-3 px-2 resp-font">Date</th>
+                                        <th class="text-center pb-3 px-2 resp-font">Status</th>
+                                        <th class="text-center pb-3 px-2 resp-font">Total</th>
+                                        <th class="text-center pb-3 px-2 resp-font">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="border-top border-bottom">
+                                    <tr>
+                                        <td class="text-center m-2 resp-font">#182</td>
+                                        <td class="text-center m-2 resp-font">
+                                            <div>November 12, 2020</div>
+                                        </td>
+                                        <td class="text-center m-2 resp-font">
+                                            <div>Pending</div>
+                                        </td>
+                                        <td class="text-center m-2 resp-font">
+                                            <div>£172.47 for 3 items</div>
+                                        </td>
+                                        <td class="text-center m-2 resp-font"><Button
+                                                class="btn resp-font fw-bold btn-dark w-100 rounded-pill">View</Button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tabs-content my-0" id="content-select-11">
+                            <div
+                                class="text-center d-flex justify-content-between px-3 resp-small-font mb-3 text-white py-2 rounded-2 fw-bold bg-dark">
+                                <div>SEARCH INVOICES</div>
+                                <div class="d-flex align-items-center bg-white">
+                                    <form action="#">
+                                        <input class="form-control rounded-0 border-0 bg-transparent" type="text"
+                                            placeholder="Search Orders">
+                                    </form>
+                                    <i class="fa-solid fs-4 mx-1 text-black fa-magnifying-glass"></i>
+                                </div>
+                            </div>
+                            <table class="w-100">
+                                <thead>
+                                    <tr>
+                                        <th class=" pb-3 px-2 resp-font">Amount</th>
+                                        <th class=" pb-3 px-2 resp-font">Invoice number</th>
+                                        <th class=" pb-3 px-2 resp-font">Customer</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="border-top border-bottom">
+                                    <tr>
+                                        <td class="m-2 resp-font py-2"><span class="fw-bold mx-2">$36.87 </span> USD
+                                            <span class="fw-semibold bg-light mx-2">paid</span>
+                                        </td>
+                                        <td class=" m-2 resp-font">
+                                            3DFF2C98-DRAFT
+                                        </td>
+                                        <td class=" m-2 resp-font">
+                                            dummyuser@gmail.com
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody class="border-top border-bottom">
+                                    <tr>
+                                        <td class="m-2 resp-font py-2"><span class="fw-bold mx-2">$36.87 </span> USD
+                                            <span class="fw-semibold bg-light mx-2">paid</span>
+                                        </td>
+                                        <td class=" m-2 resp-font">
+                                            3DFF2C98-DRAFT
+                                        </td>
+                                        <td class=" m-2 resp-font">
+                                            dummyuser@gmail.com
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody class="border-top border-bottom">
+                                    <tr>
+                                        <td class="m-2 resp-font py-2"><span class="fw-bold mx-2">$36.87 </span> USD
+                                            <span class="fw-semibold bg-light mx-2">paid</span>
+                                        </td>
+                                        <td class=" m-2 resp-font">
+                                            3DFF2C98-DRAFT
+                                        </td>
+                                        <td class=" m-2 resp-font">
+                                            dummyuser@gmail.com
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody class="border-top border-bottom">
+                                    <tr>
+                                        <td class="m-2 resp-font py-2"><span class="fw-bold mx-2">$36.87 </span> USD
+                                            <span class="fw-semibold bg-light mx-2">paid</span>
+                                        </td>
+                                        <td class=" m-2 resp-font">
+                                            3DFF2C98-DRAFT
+                                        </td>
+                                        <td class=" m-2 resp-font">
+                                            dummyuser@gmail.com
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody class="border-top border-bottom">
+                                    <tr>
+                                        <td class="m-2 resp-font py-2"><span class="fw-bold mx-2">$36.87 </span> USD
+                                            <span class="fw-semibold bg-light mx-2">paid</span>
+                                        </td>
+                                        <td class=" m-2 resp-font">
+                                            3DFF2C98-DRAFT
+                                        </td>
+                                        <td class=" m-2 resp-font">
+                                            dummyuser@gmail.com
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tabs-content my-0" id="content-select-12">
+                            <div
+                                class="text-center d-flex justify-content-between align-items-center resp-small-font px-3 mb-3 text-white py-2 rounded-2 fw-bold bg-dark">
+                                <div>SEARCH PAYMENTS</div>
+                                <div class="d-flex align-items-center bg-white">
+                                    <form action="#">
+                                        <input class="form-control rounded-0 border-0 bg-transparent" type="text"
+                                            placeholder="Search Orders">
+                                    </form>
+                                    <i class="fa-solid fs-4 mx-1 text-black fa-magnifying-glass"></i>
+                                </div>
+                            </div>
+                            <table class="w-100">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center pb-3 px-2 resp-font">Status</th>
+                                        <th class="text-center pb-3 px-2 resp-font">Amount</th>
+                                        <th class="text-center pb-3 px-2 resp-font">Method</th>
+                                        <th class="text-center pb-3 px-2 resp-font">Transaction ID</th>
+                                        <th class="text-center pb-3 px-2 resp-font">Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="border-top border-bottom">
+                                    <tr>
+                                        <td class="text-center m-2 resp-font">Paid</td>
+                                        <td class="text-center m-2 resp-font">$4564</td>
+                                        <td class="text-center m-2 resp-font">VISA</td>
+                                        <td class="text-center m-2 resp-font">45346546</td>
+                                        <td class="text-center m-2 resp-font">27.042020,18:32</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tabs-content my-0" id="content-select-13">
+                            <div class="text-center fs-4 my-3 text-white py-2 rounded-2 fw-bold bg-dark">
+                                ADD BALANCE
+                            </div>
+                            <div class="fs-5 fw-bold px-0 my-3">Card Information</div>
+
+                            <form action="#">
+                                <div class="rounded-3 border p-4">
+                                    <div class="d-flex w-100">
+                                        <div class="w-100">
+                                            <label class="fw-bold my-2" for="">Card Name</label>
+                                            <input class="form-control" type="text" placeholder="Card Name">
+                                        </div>
+                                        &nbsp;
+                                        <div class="w-100">
+                                            <label class="fw-bold my-2" for="">Card Number</label>
+                                            <input class="form-control" type="text" placeholder="XXXX-XXXX-XXXXX">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex w-100">
+                                        <div class="w-100">
+                                            <label class="fw-bold my-2" for="">CVV</label>
+                                            <input class="form-control" type="text" placeholder="XXX">
+                                        </div>
+                                        &nbsp;
+                                        <div class="w-100">
+                                            <label class="fw-bold my-2" for="">Valid Until</label>
+                                            <input class="form-control" type="date" name="" id="">
+                                        </div>
+                                    </div>
+                                    <form action="#">
+                                        <div class="py-2 px-3 my-2 border">
+                                            <input class="form" type="radio" name="Credit" id="Credit">
+                                            <label class="mx-2" for="Credit">Credit/Dabet Card &nbsp; <img
+                                                    src="accets/Images/Group 1000001936.png" alt=""
+                                                    width="200px"></label>
+                                        </div>
+                                        <div class=" px-3 my-2 border">
+                                            <input class="form" type="radio" name="Credit" id="Google">
+                                            <label class="mx-2" for="Google">Google Pay &nbsp; <img
+                                                    src="accets/Images/Group 1000001905.png" alt=""
+                                                    width="60px"></label>
+                                        </div>
+                                        <div class=" px-3 my-2 border">
+                                            <input class="form" type="radio" name="Credit" id="PayPal">
+                                            <label class="mx-2" for="PayPal">PayPal &nbsp; <img
+                                                    src="accets/Images/Group 1000001906.png" alt=""
+                                                    width="90px"></label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tabs-content my-0" id="content-select-14">
+                            <div class="text-center fs-4 my-3 text-white py-2 rounded-2 fw-bold bg-dark">My ORDERS
+                            </div>
+                            <table class="w-100">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center pb-3 px-2 resp-font">Order</th>
+                                        <th class="text-center pb-3 px-2 resp-font">Date</th>
+                                        <th class="text-center pb-3 px-2 resp-font">Status</th>
+                                        <th class="text-center pb-3 px-2 resp-font">Total</th>
+                                        <th class="text-center pb-3 px-2 resp-font">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="border-top border-bottom">
+                                    <tr>
+                                        <td class="text-center m-2 resp-font">#182</td>
+                                        <td class="text-center m-2 resp-font">
+                                            <div>November 12, 2020</div>
+                                        </td>
+                                        <td class="text-center m-2 resp-font">
+                                            <div>Open</div>
+                                        </td>
+                                        <td class="text-center m-2 resp-font">
+                                            <div>£172.47 for 3 items</div>
+                                        </td>
+                                        <td class="text-center m-2 resp-font"><Button
+                                                class="btn resp-font fw-bold btn-dark w-100 rounded-pill my-2">View</Button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody class="border-top border-bottom">
+                                    <tr>
+                                        <td class="text-center m-2 resp-font">#182</td>
+                                        <td class="text-center m-2 resp-font">
+                                            <div>Fab 2, 2020</div>
+                                        </td>
+                                        <td class="text-center m-2 resp-font">
+                                            <div>Complete</div>
+                                        </td>
+                                        <td class="text-center m-2 resp-font">
+                                            <div>£172.47 for 3 items</div>
+                                        </td>
+                                        <td class="text-center m-2 resp-font"><Button
+                                                class="btn resp-font fw-bold btn-dark w-100 rounded-pill my-2">View</Button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tabs-content my-0 active" id="content-select-15">
+                            <div class="">
+                                <form action="">
+                                    <div class="row gradient-blue justify-content-center px-lg-4 py-lg-4 px-3 py-4">
+                                        <div class="col-lg-7 col-md-12">
+                                            <div class="px-4 py-3 bg-white">
+                                                <div class="fs-5 fw-bold my-3">Edit
+                                                    Details</div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <label class="fw-bold my-2" for="">First Name</label>
+                                                        <input class="form-control" type="text" placeholder="Name">
+                                                    </div>
+                                                    <div class="col">
+                                                        <label class="fw-bold my-2" for="">Last Name</label>
+                                                        <input class="form-control" type="text" placeholder="Name">
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <label class="fw-bold my-2" for="">Email</label>
+                                                        <input class="form-control" type="email" placeholder="Email">
+                                                    </div>
+
+                                                    <div class="col-lg-6">
+                                                        <label class="fw-bold my-2" for="">Phone</label>
+                                                        <input class="form-control" type="text" placeholder="Phone">
+                                                    </div>
+                                                </div>
+
+                                                <label class="fw-bold my-2" for="">Address</label>
+                                                <textarea class="form-control border" name="" id=""
+                                                    placeholder="Address"></textarea>
+
+                                                <a class="">
+                                                    <button class="master-btn px-4 rounded-3 py-2 text-white my-3">
+                                                        Update Profile</button>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-5 col-md-12">
+                                            <div class="px-4 py-3 bg-white h-100">
+                                                <div class="fs-5 fw-bold my-3">Change
+                                                    Password</div>
+                                                <label class="fw-bold my-2" for="">Old Password</label>
+                                                <input class="form-control" type="text" placeholder="Name">
+
+                                                <label class="fw-bold my-2" for="">New Password</label>
+                                                <input class="form-control" type="email" placeholder="Email">
+
+                                                <label class="fw-bold my-2" for="">Confirm Password</label>
+                                                <input class="form-control" type="text" placeholder="Phone">
+                                                <br>
+                                                <a class="">
+                                                    <button class="master-btn px-5 py-2 rounded-3 text-white my-2">
+                                                        Update</button>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tabs Content End -->
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- footer -->
+    <footer class="bg-light text-start text-lg-start pt-4 mb-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold">Resources</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="my-3 fw-semibold">
+                            <a href="Check-Refill-Status.html" class="text-body">Check Your Refill Status</a>
+                        </li>
+                        <li class="my-3 fw-semibold">
+                            <a href="Contact-us.html" class="text-body">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold">Legal</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="my-3 fw-semibold">
+                            <a href="privacy.html" class="text-body">Privacy Policy</a>
+                        </li>
+                        <li class="my-3 fw-semibold">
+                            <a href="Terms-of-Service.html" class="text-body">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <ul class="list-unstyled mb-0">
+                        <li class="my-3 fw-semibold">
+                            <a href="DMCA.html" class="text-body">DMCA Compliance</a>
+                        </li>
+                        <li class="my-3 fw-semibold">
+                            <a href="Cancellation&Refund-Policy.html" class="text-body">Cancellation & Refund Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2020 Copyright:
+            <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+    </footer>
+    <!-- footer end -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(".tab-list li").on("click", function () {
+            var tabId = ".tab-list li#" + $(this).attr("id");
+            var tabDivId = ".tabs-content#content-" + $(this).attr("id");
+
+            if (!$(this).hasClass("active")) {
+                $(".tab-list li").removeClass("active");
+                $(this).addClass("active");
+
+                $(".tabs-content").removeClass("active");
+                $(tabDivId).addClass("active");
+            }
+        });
+
+        document.querySelector('.profile-side-tog').addEventListener('click', () => {
+            document.querySelector('.profile-sidebar').style.left = '0'
+            document.querySelector('.mask').style.display = "block"
+            // document.body.style.overflow = "hidden"
+        })
+        document.querySelector('.profile-side-close').addEventListener('click', () => {
+            document.querySelector('.profile-sidebar').style.left = '-1000%'
+            document.querySelector('.mask').style.display = "none"
+            // document.body.style.overflow = "hidden"
+        })
+    </script>
+</body>
+
+</html>

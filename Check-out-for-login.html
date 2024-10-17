@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Purchase-is-Complete</title>
+</head>
+
+<style>
+    .inner .accordion-button::after {
+        display: none;
+    }
+</style>
+
+<body>
+    <!-- main navbar -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container">
+            <a class="navbar-brand m-0" href="/Home.html"><img src="accets/images/total-re-up-logo.png" alt=""
+                    width="70%"></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars fs-1" aria-hidden="true"></i>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+                <ul class="navbar-nav py-3">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-black fw-semibold" href="Check-Refill-Status.html">Check Refill
+                            Status</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-black fw-semibold" href="/Contact-us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-black fw-semibold" href="Login.html">Log In</a>
+                    </li>
+                    <div class="border rounded-pill text-primary px-3 py-1 border-2 border-primary">(786) 322-8990</div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- main navbar end -->
+
+    <section class="gradient-blue">
+        <div class="container">
+            <div class="row p-4">
+                <div class="col-lg-8 my-3">
+                    <div class="bg-white p-lg-4 p-2">
+                        <div class="accordion accordion-flush mb-3" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button text-main fw-semibold fs-5 collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                        aria-expanded="true" aria-controls="flush-collapseOne">
+                                        1 Payment Information
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body px-0">
+                                        <div class="container inner">
+                                            <div class="fw-semibold text-uppercase">Credit & Debit Cards</div>
+
+                                            <div class="accordion my-3" id="accordionExample">
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="headingOne">
+                                                        <button class="accordion-button bg-transparent text-black"
+                                                            type="button" data-bs-toggle="collapse"
+                                                            data-bs-target="#cvv" aria-expanded="true"
+                                                            aria-controls="cvv">
+                                                            <input type="radio" name="" id="visa">&nbsp;
+                                                            <label for="visa">
+                                                                <b>visa </b>&nbsp; ending in 1112
+                                                            </label>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="cvv" class="accordion-collapse collapse show"
+                                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body py-0">
+                                                            <div class="my-3 d-flex align-items-center">
+                                                                <label for="" class="fw-bold">Enter CVV </label>
+                                                                <input type="text" class="form-control ms-2 w-25"
+                                                                    placeholder="CVV">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="container inner">
+                                            <div class="fw-semibold text-uppercase">Add payment method</div>
+
+                                            <div class="accordion" id="accordionExample">
+                                                <div class="accordion-item border-0">
+                                                    <h2 class="accordion-header" id="headingOne">
+                                                        <button class="accordion-button bg-transparent text-black"
+                                                            type="button" data-bs-toggle="collapse"
+                                                            data-bs-target="#card" aria-expanded="true"
+                                                            aria-controls="card">
+                                                            <input type="radio" name="" id="cardd">&nbsp;
+                                                            <label for="cardd">Credit or debit card</label>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="card" class="accordion-collapse collapse show"
+                                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body py-0">
+                                                            <div class="d-flex my-2 gap-2">
+                                                                <div><img src="accets/images/Visa_Logo.png" width="50px"
+                                                                        class="border p-2" alt=""></div>
+                                                                <div><img src="accets/images/Visa_Logo.png" width="50px"
+                                                                        class="border p-2" alt=""></div>
+                                                                <div><img src="accets/images/Visa_Logo.png" width="50px"
+                                                                        class="border p-2" alt=""></div>
+                                                            </div>
+                                                            <div>
+                                                                <div><i class="fa-solid fa-plus" data-bs-toggle="modal"
+                                                                        data-bs-target="#addcard"></i> <img
+                                                                        src="accets/images/Visa_Logo.png" width="50px"
+                                                                        class="border p-2" alt=""> Enter Card details
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+
+                                                        <!-- Modal -->
+                                                        <div class="modal fade" id="addcard" tabindex="-1"
+                                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h1 class="modal-title fs-5"
+                                                                            id="exampleModalLabel">Enter Card details
+                                                                        </h1>
+                                                                        <button type="button" class="btn-close"
+                                                                            data-bs-dismiss="modal"
+                                                                            aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="p-2 bg-white">
+                                                                            <form action="#">
+                                                                                <label class="fw-semibold mb-1"
+                                                                                    for="">Card number</label>
+                                                                                <input type="text" class="form-control">
+                                                                                <label class="fw-semibold mt-2 mb-1"
+                                                                                    for="">Nickname</label>
+                                                                                <input type="text" class="form-control">
+                                                                                <label class="fw-semibold mt-2 mb-1"
+                                                                                    for="">Expiry
+                                                                                    date</label>
+                                                                                <input type="date" name="" id=""
+                                                                                    class="form-control">
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-dark"
+                                                                            data-bs-dismiss="modal">Close</button>
+                                                                        <button type="button"
+                                                                            class="master-btn p-2 rounded-3">Enter card
+                                                                            details</button>
+                                                                    </div>
+
+                                                                    <div class="p-3">
+                                                                        <div> please ensure that you enable your card
+                                                                            for online payments
+                                                                            from
+                                                                            your bank's app</div>
+                                                                        <div class="d-flex my-3">
+                                                                            <div><img class="border p-1 me-2"
+                                                                                    src="accets/images/Visa_Logo.png"
+                                                                                    width="50px" alt="">
+                                                                            </div>
+                                                                            <div><img class="border p-1 me-2"
+                                                                                    src="accets/images/Visa_Logo.png"
+                                                                                    width="50px" alt="">
+                                                                            </div>
+                                                                            <div><img class="border p-1 me-2"
+                                                                                    src="accets/images/Visa_Logo.png"
+                                                                                    width="50px" alt="">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="Remove" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Remove Payment
+                                                Information
+                                            </h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="p-2 bg-white">
+                                                If you do not want this payment method to be displayed in your list of
+                                                payment options, click "Confirm". (Disabling this
+                                                payment method will neither cancel any of your open order nor fail any
+                                                automatic payments set. up that use this method.)
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-dark"
+                                                data-bs-dismiss="modal">cancel</button>
+                                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Confirm
+                                                Remove</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion accordion-flush mb-3" id="accordionFlushExample">
+                            <div class="accordion-item border-bottom">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button fw-semibold text-main fs-5 collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                        aria-expanded="true" aria-controls="flush-collapseTwo">
+                                        2 Billing Information
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="d-flex align-items-start justify-content-between">
+                                            <div class="">
+                                                <div class="d-flex">
+                                                    <div class="fw-semibold">Phone: </div>
+                                                    <div>90398409</div>
+                                                </div>
+                                                <div class="d-flex">
+                                                    <div class="fw-semibold">Email:</div>
+                                                    <div>lorem@gmail.com</div>
+                                                </div>
+                                                <div class="d-flex ">
+                                                    <div class="fw-semibold">First name:</div>
+                                                    <div>Lorem</div>
+                                                </div>
+                                                <div class="d-flex ">
+                                                    <div class="fw-semibold">Last name:</div>
+                                                    <div>ipsum</div>
+                                                </div>
+                                                <div class="d-flex ">
+                                                    <div class="fw-semibold">Address:</div>
+                                                    <div>Lorem ipsum dolor sit amet.</div>
+                                                </div>
+                                                <div class="d-flex ">
+                                                    <div class="fw-semibold">Appartment:</div>
+                                                    <div>Lorem ipsum</div>
+                                                </div>
+                                                <div class="d-flex ">
+                                                    <div class="fw-semibold">City:</div>
+                                                    <div>Lorem ipsum</div>
+                                                </div>
+                                                <div class="d-flex ">
+                                                    <div class="fw-semibold">State:</div>
+                                                    <div>Lorem ipsum</div>
+                                                </div>
+                                                <div class="d-flex ">
+                                                    <div class="fw-semibold">Zip:</div>
+                                                    <div>Lorem ipsum</div>
+                                                </div>
+                                            </div>
+                                            <button class="rounded-3 btn btn-outline-primary" data-bs-toggle="modal"
+                                                data-bs-target="#billing-info">Change</button>
+                                        </div>
+
+                                        <!-- Modal for Billing Information -->
+                                        <div class="modal fade" id="billing-info" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Billing
+                                                            Information</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="my-4">
+                                                            <div class="row justify-content-between mt-2">
+                                                                <div class="col-lg col">
+                                                                    <input type="text" placeholder="(453) 453-4534"
+                                                                        class="form-control py-2">
+                                                                </div>
+                                                                <div class="col-lg col">
+                                                                    <input type="text" placeholder="Enter Email"
+                                                                        class="form-control py-2">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row justify-content-between mt-2">
+                                                                <div class="col-lg col">
+                                                                    <input type="text" placeholder="First Name"
+                                                                        class="form-control py-2">
+                                                                </div>
+                                                                <div class="col-lg col">
+                                                                    <input type="text" placeholder="Last Name"
+                                                                        class="form-control py-2">
+                                                                </div>
+                                                            </div>
+
+                                                            <input type="email" placeholder=" Address"
+                                                                class="form-control py-2 mt-2">
+
+                                                            <div class="row justify-content-between mt-2">
+                                                                <div class="col-lg col">
+                                                                    <input type="text"
+                                                                        placeholder="Apartment,suite,etc."
+                                                                        class="form-control py-2">
+                                                                </div>
+                                                                <div class="col-lg col">
+                                                                    <input type="text" placeholder="City"
+                                                                        class="form-control py-2">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row justify-content-between mt-2">
+                                                                <div class="col-lg col">
+                                                                    <input type="text" placeholder="Select,State"
+                                                                        class="form-control py-2">
+                                                                </div>
+                                                                <div class="col-lg col">
+                                                                    <input type="text" placeholder="Zip Code"
+                                                                        class="form-control py-2">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button"
+                                                            class="master-btn p-2 rounded-3">Change</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Modal for Billing Information end-->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion accordion-flush mb-3" id="accordionFlushExample">
+                            <div class="accordion-item border-bottom">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button fw-semibold text-main fs-5 collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                        aria-expanded="true" aria-controls="flush-collapseThree">
+                                        3 Complete Payment
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <h6 class="fw-bold">Terms and Condition</h6>
+                                        <p class="">I hereby authorize charges for a total of $6 through my
+                                            credit/debit
+                                            card. I
+                                            understand that the
+                                            charge on my credit/debit card is non-refundable under any
+                                            circumstances.
+                                            Service agreement
+                                        </p>
+                                        <h6 class="fw-bold">Service Agreement</h6>
+                                        <p class="">The service provided by Pay Total Mobile is not associated with
+                                            any
+                                            carrier. By
+                                            accepting this,
+                                            you authorize us to make payment on your behalf to the operator.
+                                        </p>
+                                        <div class="my-2 fw-semibold fs-sm d-flex align-items-baseline gap-1">
+                                            <input type="checkbox" name="" id="terms">
+                                            <label for="terms">I agree to Terms and Conditions and Service
+                                                Agreement</label>
+                                        </div>
+                                        <div class="my-3 fw-semibold fs-sm">
+                                            <input type="checkbox" name="" id="Subscribe">
+                                            <label for="Subscribe">Subscribe to Auto Pay?</label>
+                                        </div>
+
+                                        <p class="">Choose auto pay for automatic recurring recharge every 30 days
+                                            to
+                                            save
+                                            fees, you
+                                            will be charged
+                                            flat 10% fee for recharge amount. <a href="Terms-of-Service.html"> Read
+                                                More</a>
+                                        </p>
+                                        <button class="master-btn d-block mx-auto rounded-3 py-3 fs-5 px-5">Place
+                                            Order</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 my-3">
+                    <div class="bg-white p-4">
+                        <div class="border">
+                            <img src="accets/images/atnt-pre-paid.png" class="d-block mx-auto my-3" width="200dvw"
+                                alt="">
+                        </div>
+
+                        <h5 class="fw-semibold my-3">Order Summary</h5>
+
+                        <div class="border-top border-bottom pt-2 my-3">
+                            <div class="d-flex justify-content-between my-3 px-2">
+                                <div class="fw-semibold">Phone Number</div>
+                                <div>(111) 111-1111</div>
+                            </div>
+                            <div class="d-flex justify-content-between my-3 px-2">
+                                <div class="fw-semibold">Product</div>
+                                <div>AT&T</div>
+                            </div>
+                            <div class="d-flex justify-content-between my-3 px-2">
+                                <div class="fw-semibold">Amount Sent</div>
+                                <div>$100.00</div>
+                            </div>
+                            <div class="d-flex justify-content-between my-3 px-2">
+                                <div class="fw-semibold">Processing Fee</div>
+                                <div>$10.00</div>
+                            </div>
+                            <div class="d-flex justify-content-between my-3 px-2">
+                                <div class="fw-semibold">Net Total</div>
+                                <div>$110.00</div>
+                            </div>
+                            <div class="d-flex justify-content-between bg-main text-white my-2 py-3 rounded-2 px-2">
+                                <div class="fw-semibold">Total Charges</div>
+                                <div class="fs-5 fw-bold">$110.00 USD</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-light text-start text-lg-start pt-4 mb-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold">Resources</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="my-3 fw-semibold">
+                            <a href="Check-Refill-Status.html" class="text-body">Check Your Refill Status</a>
+                        </li>
+                        <li class="my-3 fw-semibold">
+                            <a href="Contact-us.html" class="text-body">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold">Legal</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="my-3 fw-semibold">
+                            <a href="privacy.html" class="text-body">Privacy Policy</a>
+                        </li>
+                        <li class="my-3 fw-semibold">
+                            <a href="Terms-of-Service.html" class="text-body">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <ul class="list-unstyled mb-0">
+                        <li class="my-3 fw-semibold">
+                            <a href="DMCA.html" class="text-body">DMCA Compliance</a>
+                        </li>
+                        <li class="my-3 fw-semibold">
+                            <a href="Cancellation&Refund-Policy.html" class="text-body">Cancellation & Refund Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2020 Copyright:
+            <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

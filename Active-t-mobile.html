@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>t-mobile-plan</title>
+</head>
+
+<style>
+    .metro-bg {
+        background-color: #fd006a;
+    }
+
+    .t-mobile-btn {
+        background: #fd006a;
+        transition: ease-in-out 0.3s;
+        border: 0;
+        color: #fff !important;
+    }
+
+    .t-mobile-btn:hover {
+        background: #000000;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background: #fd006a;
+        color: #fff;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url('https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png');
+    }
+
+    .glow-hov:hover {
+        box-shadow: 0px 0px 20px 0px rgb(243, 109, 255);
+    }
+
+    @media only screen and (max-width: 500px) {
+        .fs-5 {
+            font-size: small !important;
+        }
+    }
+
+    .read-more .accordion-button::after {
+        display: none;
+    }
+</style>
+
+<body>
+    <!-- main navbar -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container">
+            <a class="navbar-brand m-0" href="/Home.html"><img src="accets/images/total-re-up-logo.png" alt=""
+                    width="70%"></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars fs-1" aria-hidden="true"></i>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+                <ul class="navbar-nav py-3">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-black fw-semibold" href="Check-Refill-Status.html">Check Refill
+                            Status</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-black fw-semibold" href="/Contact-us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-black fw-semibold" href="Login.html">Log In</a>
+                    </li>
+                    <div class="border rounded-pill text-primary px-3 py-1 border-2 border-primary">(786) 322-8990</div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- main navbar end -->
+
+
+    <div class="container mt-4" style="margin-bottom: -80px;">
+        <div class="d-flex justify-content-center">
+            <div class="border col-lg-12 col-md-12 rounded-3 px-4 pb-5 py-4 metro-bg">
+                <div class="row align-items-center justify-content-evenly">
+                    <div class="col-auto text-center bg-white rounded-3 mb-lg-3 mb-0 p-lg-4 p-3"><img class="rounded-4"
+                            src="accets/images/t-mobile.png" width="170px" alt="">
+                    </div>
+                    <div class="col-lg-auto col-md-6 my-lg-0 mt-3">
+                        <div class="fs-2 fw-bold text-lg-start text-center text-white">Metro Pcs Instant Refill!</div>
+                        <!-- <div class=" fw-semibold text-lg-start text-center text-white mb-lg-0 mb-3">Plan Details:
+                            Metropcs (3 - 200 USD)
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-4 justify-content-center position-relative" style="top: -80px;">
+            <div class="col-md-11 col-11 my-3">
+
+
+                <div class="p-lg-4 p-2 rounded-3 shadow bg-white">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="fs-4 fw-semibold mb-3">3 easy steps to get started</div>
+                            <div class="accordion accordion-flush border rounded-3" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button rounded-3 collapsed fs-5" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                            aria-expanded="false" aria-controls="flush-collapseOne">
+                                            1. Make sure your device is compatible with T-Mobile
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body px-lg-5 p-lg-3 py-lg-4">
+                                            <div class="mb-2">
+                                                <div class="my-1 fs-5 mb-3">Enter your device's IMEI number to
+                                                    check compatibility with our network.</div>
+                                            </div>
+
+                                            <form action="#">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control fs-5 py-2 mb-3"
+                                                            placeholder="Enter sim number here">
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <button
+                                                            class="btn btn-secondary text-white d-block m-auto fs-5">Check
+                                                            compatibility</button>
+                                                        <button
+                                                            class="btn btn-dark text-white d-block m-auto mt-3 px-4 fs-5">Skip</button>
+
+                                                    </div>
+                                                </div>
+                                                <div class="fs-5 mt-4">
+                                                    How to find your device's IMEI number? (dial: '*#06#')
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion accordion-flush border rounded-3" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button rounded-3 fs-5 collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                            aria-expanded="true" aria-controls="flush-collapseTwo">
+                                            2. Enter your T-Mobile SIM card number
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body px-lg-5 p-lg-3 py-lg-4">
+                                            <div class="text-center mb-3">
+                                                <div class="fs-5">Use my T-Mobile SIM card</div>
+                                                <div class="my-2">Already have a physical T-Mobile SIM card you want to
+                                                    use?</div>
+                                                <div>Enter your T-Mobile SIM card number</div>
+                                            </div>
+                                            <form action="#">
+                                                <input type="text" class="form-control fs-5 py-2"
+                                                    placeholder="SIM card Number">
+                                                <select class="form-select py-2 fs-5 mt-3" name="" id="">
+                                                    <option value="">Select desired zipcode</option>
+                                                    <option value="">florida</option>
+                                                    <option value="">New York</option>
+                                                    <option value="">california</option>
+                                                </select>
+
+                                                <button
+                                                    class="t-mobile-btn btn mt-3 px-3 d-block m-auto">Select</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion accordion-flush border rounded-3" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button rounded-3 fs-5 collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                            aria-expanded="true" aria-controls="flush-collapseThree">
+                                            3. Select Plan add-on
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body p-lg-3 py-lg-4 px-2">
+
+                                            <div class="form-check border-bottom pb-4 form-switch mb-4">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="Skip">
+                                                <label class="form-check-label" for="Skip">Skip this
+                                                    step, activate my line</label>
+                                            </div>
+
+                                            <div class="row py-4 border-bottom read-more">
+                                                <div class="col-lg-9 col-md-9">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch"
+                                                            id="M&C">
+                                                        <div>
+                                                            <label class="form-check-lable" for="M&C">Mexico &Canada
+                                                                Unlimited</label>
+                                                            <br>
+                                                            <div class="accordion accordion-flush my-2"
+                                                                id="accordionFlushExample">
+                                                                <div class="accordion-item">
+                                                                    <h2 class="accordion-header" id="flush-headingOne">
+                                                                        <button
+                                                                            class="accordion-button p-0 bg-transparent text-primary fs-6 fw-semibold collapsed"
+                                                                            type="button" data-bs-toggle="collapse"
+                                                                            data-bs-target="#readOne"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="readOne">
+                                                                            Read more
+                                                                        </button>
+                                                                    </h2>
+                                                                    <div id="readOne"
+                                                                        class="accordion-collapse collapse"
+                                                                        aria-labelledby="flush-headingOne"
+                                                                        data-bs-parent="#accordionFlushExample">
+                                                                        <div class="accordion-body p-0">
+                                                                            Expand your plan with Mexico &amp; Canada
+                                                                            Unlimited for only $5/mo more and get
+                                                                            Unlimited Talk, Text &amp; LTE data on your
+                                                                            smartphone in the U.S., and unlimited data
+                                                                            while traveling in Mexico and Canada, with
+                                                                            up to 5GB at 4G LTE speeds. As a bonus, get
+                                                                            unlimited text messaging in Mexico and
+                                                                            Canada
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-lg-3 col-md-3">
+                                                    <div class="fw-semibold">$5.00
+                                                        Permonth</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row py-4 border-bottom read-more">
+                                                <div class="col-lg-9 col-md-9">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch"
+                                                            id="North">
+                                                        <div>
+
+                                                            <label class="form-check-label" for="North">North
+                                                                America Stateside International Calling w/Mobile</label>
+
+
+                                                            <div class="accordion accordion-flush my-2"
+                                                                id="accordionFlushExample">
+                                                                <div class="accordion-item">
+                                                                    <h2 class="accordion-header" id="flush-headingOne">
+                                                                        <button
+                                                                            class="accordion-button p-0 bg-transparent text-primary fs-6 fw-semibold collapsed"
+                                                                            type="button" data-bs-toggle="collapse"
+                                                                            data-bs-target="#readTwo"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="readTwo">
+                                                                            Read more
+                                                                        </button>
+                                                                    </h2>
+                                                                    <div id="readTwo"
+                                                                        class="accordion-collapse collapse"
+                                                                        aria-labelledby="flush-headingOne"
+                                                                        data-bs-parent="#accordionFlushExample">
+                                                                        <div class="accordion-body p-0">
+                                                                            Go ahead and talk the world&rsquo;s ear off
+                                                                            with Stateside International Calling
+                                                                            w/Mobile. Get unlimited calling from
+                                                                            U.S./Mexico/Canada to mobiles in 30*
+                                                                            countries &amp; landlines in 70* countries.
+                                                                            Calls must originate on T-Mobtle&#39;s U.S.
+                                                                            network or in Canada or Mexico. Rates and
+                                                                            included countries vary and are subject to
+                                                                            change. Must be direct communication between
+                                                                            2 people; certain numbers not included. See
+                                                                            www.T-Mobile.com for countries and rates.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3">
+                                                    <div class="fw-semibold">$5.00
+                                                        Permonth</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row py-4 border-bottom read-more">
+                                                <div class="col-lg-9 col-md-9">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch"
+                                                            id="Stateside">
+                                                        <div>
+                                                            <label class="form-check-label" for="Stateside">Stateside
+                                                                International Calling w/ Mobile</label>
+
+                                                            <div class="accordion accordion-flush my-2"
+                                                                id="accordionFlushExample">
+                                                                <div class="accordion-item">
+                                                                    <h2 class="accordion-header" id="flush-headingOne">
+                                                                        <button
+                                                                            class="accordion-button p-0 bg-transparent text-primary fs-6 fw-semibold collapsed"
+                                                                            type="button" data-bs-toggle="collapse"
+                                                                            data-bs-target="#readThree"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="readThree">
+                                                                            Read more
+                                                                        </button>
+                                                                    </h2>
+                                                                    <div id="readThree"
+                                                                        class="accordion-collapse collapse"
+                                                                        aria-labelledby="flush-headingOne"
+                                                                        data-bs-parent="#accordionFlushExample">
+                                                                        <div class="accordion-body p-0">
+                                                                            Expand your mobile reach with Stateside
+                                                                            International Calling w/ Mobile. Get
+                                                                            unlimited
+                                                                            calls to mobiles in 30*
+                                                                            countries&quot;,&quot;
+                                                                            and unlimited calls to landlines in 70*
+                                                                            countries. Discounted calling rates apply to
+                                                                            the
+                                                                            rest of the world These rates and discounted
+                                                                            rates to other countries vary and are
+                                                                            subject to
+                                                                            change.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3">
+                                                    <div class="fw-semibold">$5.00
+                                                        Permonth</div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="d-flex justify-content-end mt-4">
+                                                <button class="btn t-mobile-btn fs-5 px-3">Active Now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 mt-lg-0 mt-3">
+                            <div class="fs-5">If you have received a Grab and go, you will need to activate it in order
+                                to use it. To do so, please follow the instructions found on the packaging .
+                            </div>
+                            <br>
+                            <div class="fs-5">Once you have completed the activation process, your SIM card will be
+                                ready for use. If you encounter any difficulties or have any questions during the
+                                activation process, please do not hesitate to reach out to our customer support team for
+                                assistance.
+                                <br>
+                                <br>
+                                Customer Service #: (254) 274-8777
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- footer -->
+    <footer class="bg-light text-start text-lg-start pt-4 mb-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold">Resources</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="my-3 fw-semibold">
+                            <a href="Check-Refill-Status.html" class="text-body">Check Your Refill Status</a>
+                        </li>
+                        <li class="my-3 fw-semibold">
+                            <a href="Contact-us.html" class="text-body">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold">Legal</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="my-3 fw-semibold">
+                            <a href="privacy.html" class="text-body">Privacy Policy</a>
+                        </li>
+                        <li class="my-3 fw-semibold">
+                            <a href="Terms-of-Service.html" class="text-body">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <ul class="list-unstyled mb-0">
+                        <li class="my-3 fw-semibold">
+                            <a href="DMCA.html" class="text-body">DMCA Compliance</a>
+                        </li>
+                        <li class="my-3 fw-semibold">
+                            <a href="Cancellation&Refund-Policy.html" class="text-body">Cancellation & Refund Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2020 Copyright:
+            <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

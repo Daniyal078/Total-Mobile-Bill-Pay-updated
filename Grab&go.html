@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"
+        integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Select-mobile-carrier</title>
+</head>
+
+<style>
+    button:hover {
+        opacity: 50%;
+    }
+
+    .travel-bg {
+        background: #0760A7;
+    }
+
+    .atnt-bg {
+        background: #0E9CD8;
+    }
+
+    .light-mob-bg {
+        background: #F0A90F;
+    }
+
+    .Tmob-bg {
+        background: #E20074;
+    }
+
+    .verizon-bg {
+        background: #CE040D;
+    }
+
+    .mobileX-bg {
+        background: #07D906;
+    }
+
+    .slick-next:before,
+    .slick-prev:before {
+        color: #000;
+    }
+</style>
+
+<body>
+    <!-- main navbar -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container">
+            <a class="navbar-brand m-0" href="/Home.html"><img src="accets/images/total-re-up-logo.png" alt=""
+                    width="70%"></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars fs-1" aria-hidden="true"></i>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+                <ul class="navbar-nav py-3">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-black fw-semibold" href="#">Check Refill Status</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-black fw-semibold" href="/Contact-us.html">Contact Us</a>
+                    </li>
+                    <!-- <li class="nav-item mx-4">
+                        <a class="nav-link text-black fw-semibold" href="#">Log In</a>
+                    </li> -->
+                    <div class="border rounded-pill text-primary px-3 py-1 border-2 border-primary">(786) 322-8990</div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- main navbar end -->
+    <div class="fw-bold text-center px-3 fs-3 mb-5 py-4 bg-light set-headding index-1">Grab & Go</div>
+
+    <section>
+        <div class="container-lg my-lg-5 my-4">
+            <div
+                class="row justify-content-xl-start justify-content-lg-center justify-content-md-center justify-content-center">
+                <div class="col-lg-4 col-md-4 col mb-3">
+                    <div class="border p-lg-5 p-3 pt-lg-3 text-center h-100 d-flex flex-column">
+                        <img class="d-block m-auto" src="accets/images/travel-mobile.jpg" alt="" width="180vw">
+                        <p class="mb-4">With Travel Mobile SIM, enjoy seamless global coverage and affordable roaming,
+                            perfect for
+                            staying in touch while traveling.</p>
+                        <button class="travel-bg fw-bold border-0 text-white p-2 rounded w-100">Continue</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col mb-3">
+                    <div class="border p-lg-5 p-3 pt-lg-3 text-center h-100 d-flex flex-column">
+                        <img class="d-block m-auto my-3" src="accets/images/at&t-new-logo.png" alt="" width="130vw">
+                        <p class="mb-4">AT&T SIM offers strong nationwide coverage and high-speed data, giving you a
+                            powerful connection anytime, anywhere.</p>
+                        <button class="atnt-bg fw-bold border-0 text-white p-2 rounded w-100">Continue</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col mb-3">
+                    <div class="border p-lg-5 p-3 pt-lg-3 text-center h-100 d-flex flex-column">
+                        <img class="d-block m-auto" src="accets/images/light-mobile-logo.png" alt="" width="180vw">
+                        <p class="mb-4">Welcome to MyLightMobile, where simplicity meets efficiency. Experience seamless
+                            mobile connectivity, optimized for your everyday.</p>
+                        <button class="light-mob-bg fw-bold border-0 text-white p-2 rounded w-100">Continue</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col mb-3">
+                    <div class="border p-lg-5 p-3 pt-lg-3 text-center h-100 d-flex flex-column">
+                        <img class="d-block m-auto" src="accets/images/t-mobile.png" alt="" width="180vw">
+                        <p class="mb-4">Stay connected with T-Mobile’s reliable SIM, offering fast speeds, nationwide
+                            coverage, and unlimited possibilities for your mobile.</p>
+                        <button class="Tmob-bg fw-bold border-0 text-white p-2 rounded w-100">Continue</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col mb-3">
+                    <div class="border p-lg-5 p-3 pt-lg-3 text-center h-100 d-flex flex-column">
+                        <img class="d-block m-auto" src="accets/images/Verizon-logo.jpg" alt="" width="180vw">
+                        <p class="mb-4">Verizon’s SIM ensures unmatched network reliability and ultra-fast 5G, keeping
+                            you
+                            connected wherever life takes you.</p>
+                        <button class="verizon-bg fw-bold border-0 text-white p-2 rounded w-100">Continue</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col mb-3">
+                    <div class="border p-lg-5 p-3 pt-lg-3 text-center h-100 d-flex flex-column">
+                        <img class="d-block m-auto" src="accets/images/Mobile_X_Global___Logo.jpg" alt="" width="180vw">
+                        <p class="mb-4">MobileX gives you flexible SIM plans, allowing you to customize your data and
+                            call
+                            needs while enjoying superior connectivity.</p>
+                        <button class="mobileX-bg fw-bold border-0 text-white p-2 rounded w-100">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="fw-bold text-center px-3 fs-3 mt-4 bg-white text-main text-uppercase index-1">How it Works</div>
+        <div class="container py-lg-5 py-4 col-lg-12 col-md-10 col-9">
+            <div class="row responsive py-4">
+                <div class="col-lg-3 col-md-4 col">
+                    <div>
+                        <img class="d-block m-auto" src="accets/images/Get Your SIM.png" width="180vw" height="180vw"
+                            alt="">
+                        <div class="fw-bold fs-4 text-center mt-3">Get Your SIM</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col">
+                    <div>
+                        <img class="d-block m-auto" src="accets/images/Activate.png" width="180vw" height="180vw"
+                            alt="">
+                        <div class="fw-bold fs-4 text-center mt-3">Activate</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col">
+                    <div>
+                        <img class="d-block m-auto" src="accets/images/Choose a Plan.png" width="180vw" height="180vw"
+                            alt="">
+                        <div class="fw-bold fs-4 text-center mt-3">Choose a Plan</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col">
+                    <div>
+                        <img class="d-block m-auto" src="accets/images/Stay Connected.png" width="180vw" height="180vw"
+                            alt="">
+                        <div class="fw-bold fs-4 text-center mt-3">Stay Connected</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container">
+            <div class="fw-bold text-center px-3 fs-3 mt-3 bg-white text-main text-uppercase index-1">Frequently Asked
+                Questions
+            </div>
+            <div class="accordion my-5" id="accordionExample">
+                <div class="accordion-item border-0 my-2 shadow rounded-4">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button fw-bold text-black bg-white fs-5 gap-2" shadow rounded-4
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne">
+                            Is my iPad compatible with a mobile data plan?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            A Get eSIM iPad data plan works with any Get Get eSim-enabled iPad.The following iPad models
+                            support Get eSIM data plans:
+                            <ul>
+                                <li>iPad Pro 11-inch (1st gen or later)</li>
+                                <li>iPad Pro 12.9-inch (3rd gen or later)</li>
+                                <li>iPad Air (3rd gen or later)</li>
+                                <li>iPad (7th gen or later)</li>
+                                <li>iPad Mini (5th gen or later)</li>
+                                <li>Please also ensure that your iPad is running iPadOS 11 or later. For best results,
+                                    we recommend that you update your device to the latest iPadOS.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 my-2 shadow rounded-4">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button fw-bold fs-5 text-black bg-white gap-2" shadow rounded-4
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true"
+                            aria-controls="collapseTwo">
+                            Is my iPad compatible with a mobile data plan?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            A Get eSIM iPad data plan works with any Get Get eSim-enabled iPad.The following iPad models
+                            support Get eSIM data plans:
+                            <ul>
+                                <li>iPad Pro 11-inch (1st gen or later)</li>
+                                <li>iPad Pro 12.9-inch (3rd gen or later)</li>
+                                <li>iPad Air (3rd gen or later)</li>
+                                <li>iPad (7th gen or later)</li>
+                                <li>iPad Mini (5th gen or later)</li>
+                                <li>Please also ensure that your iPad is running iPadOS 11 or later. For best results,
+                                    we recommend that you update your device to the latest iPadOS.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 my-2 shadow rounded-4">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button fw-bold text-black fs-5 bg-white gap-2" shadow rounded-4
+                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true"
+                            aria-controls="collapseThree">
+                            Is my iPad compatible with a mobile data plan?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            A Get eSIM iPad data plan works with any Get Get eSim-enabled iPad.The following iPad models
+                            support Get eSIM data plans:
+                            <ul>
+                                <li>iPad Pro 11-inch (1st gen or later)</li>
+                                <li>iPad Pro 12.9-inch (3rd gen or later)</li>
+                                <li>iPad Air (3rd gen or later)</li>
+                                <li>iPad (7th gen or later)</li>
+                                <li>iPad Mini (5th gen or later)</li>
+                                <li>Please also ensure that your iPad is running iPadOS 11 or later. For best results,
+                                    we recommend that you update your device to the latest iPadOS.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact us -->
+    <!-- <div class="main-light-blue-bgcolor py-5">
+        <div class="container text-center">
+            <h3 class="fw-bold ">Have any questions?</h3>
+            <a href="Contact-us.html">
+                <button class="rounded-3 px-5 master-btn py-2 my-3">Contact Us</button>
+            </a>
+
+        </div>
+    </div> -->
+    <!-- contact us end -->
+
+    <!-- footer -->
+    <footer class="bg-light text-start text-lg-start pt-4 mb-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-34col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold">Resources</h5>
+                    <ul class="list-unstyled 15-0"> height="180vw"
+                        <li class="my-3 fw-semibold">
+                            <a href="Check-Refill-Status.html" class="text-body">Check Your Refill Status</a>
+                        </li>
+                        <li class="my-3 fw-semibold">
+                            <a href="Contact-us.html" class="text-body">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-34col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold">Legal</h5>
+                    <ul class="list-unstyled 15-0"> height="180vw"
+                        <li class="my-3 fw-semibold">
+                            <a href="privacy.html" class="text-body">Privacy Policy</a>
+                        </li>
+                        <li class="my-3 fw-semibold">
+                            <a href="Terms-of-Service.html" class="text-body">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-34col-md-6 mb-4">
+                    <ul class="list-unstyled mb-0">
+                        <li class="my-3 15-sem height=" 180vw"ibold">
+                            <a href="DMCA.html" class="text-body">DMCA Compliance</a>
+                        </li>
+                        <li class="my-3 fw-semibold">
+                            <a href="Cancellation&Refund-Policy.html" class="text-body">Cancellation & Refund Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2020 Copyright:
+            <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+        integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+    <script>
+        $('.responsive').slick({
+            dots: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+    </script>
+</body>
+
+</html>
